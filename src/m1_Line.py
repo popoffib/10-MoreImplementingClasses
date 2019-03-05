@@ -377,7 +377,6 @@ class Line(object):
         self.end = temp
         # We need a temp so self.start does not get lost
 
-
     def slope(self):
         """
         What comes in:
@@ -405,7 +404,7 @@ class Line(object):
           :rtype: float
         """
         # ---------------------------------------------------------------------
-        # TODO: 6.
+        # DONE: 6.
         #   a. READ the above specification, including the Example.
         #        ** ASK QUESTIONS AS NEEDED. **
         #        ** Be sure you understand it, ESPECIALLY the Example.
@@ -413,6 +412,11 @@ class Line(object):
         #        The tests are already written (below).
         #        They include the Example in the above doc-string.
         # ---------------------------------------------------------------------
+        if self.end.x != self.start.x:
+            slope = (self.start.y - self.end.y)/(self.start.x - self.end.x)
+            return slope
+        else:
+            return math.inf
 
     def length(self):
         """
