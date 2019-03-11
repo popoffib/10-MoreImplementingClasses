@@ -641,7 +641,7 @@ class Line(object):
           :rtype: bool
         """
         # ---------------------------------------------------------------------
-        # TODO: 12.
+        # DONE: 12.
         #   a. READ the above specification, including the Example.
         #        ** ASK QUESTIONS AS NEEDED. **
         #        ** Be sure you understand it, ESPECIALLY the Example.
@@ -676,6 +676,22 @@ class Line(object):
         # floating-point errors while distinguishing numbers that really
         # are different from each other.
         #######################################################################
+        dx = self.start.x - self.end.x
+        dy = self.start.y - self.end.y
+        if dx == 0:
+            s1 = math.inf
+        else:
+            s1 = (dy / dx)
+        dx2 = line2.start.x - line2.end.x
+        dy2 = line2.start.y - line2.end.y
+        if dx2 == 0:
+            s2 = math.inf
+        else:
+            s2 = (dy2/dx2)
+        if round(s1, 12) == round(s2, 12):
+            return True
+        else:
+            return False
 
     def reset(self):
         """
