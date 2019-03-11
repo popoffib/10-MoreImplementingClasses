@@ -234,7 +234,7 @@ class CapitalT(object):
           :type outline_color: str
         """
         # ---------------------------------------------------------------------
-        # TODO: 5.
+        # DONE: 5.
         #   READ the above specification, including the Example.
         #   Implement this method, then TEST it by:
         #     a. Un-comment the call to its test function, in main.  Run.
@@ -242,6 +242,10 @@ class CapitalT(object):
         #     c. Compare the graphics window to the  set_colors.pdf   pictures.
         #        They should look exactly the same as each other.
         # ---------------------------------------------------------------------
+        self.h_rect.fill_color = fill_color
+        self.v_rect.fill_color = self.h_rect.fill_color
+        self.h_rect.outline_color = outline_color
+        self.v_rect.outline_color = self.h_rect.outline_color
 
     def move_by(self, dx, dy):
         """
