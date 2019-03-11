@@ -20,10 +20,10 @@ def main():
     print('Un-comment the calls in MAIN one by one')
     print(' to run the testing code as you complete the TODOs.')
 
-    # run_test_simple_t()
-    # run_test_set_colors()
-    # run_test_move_by()
-    # run_test_clone()
+    run_test_simple_t()
+    run_test_set_colors()
+    run_test_move_by()
+    run_test_clone()
 
 
 def run_test_simple_t():
@@ -291,8 +291,6 @@ class CapitalT(object):
         self.h_rect.corner_2.y = self.h_rect.corner_2.y + dx
         self.v_rect.corner_2.y = self.v_rect.corner_2.y + dx
 
-
-
     def clone(self):
         """
         What comes in:
@@ -326,19 +324,18 @@ class CapitalT(object):
         # IMPORTANT RESTRICTION: You are NOT permitted to add any instance
         # variables beyond  h_rect  and  v_rect, at any point of this exercise.
         #######################################################################
+        clonet = self.h_rect.get_center()
+        clonet1 = self.h_rect.get_width()
+        clonet2 = self.v_rect.get_height()
+        clonet3 = self.v_rect.get_width()
+
+        end = CapitalT(clonet, clonet1, clonet2, clonet3)
+        end.set_colors(self.h_rect.fill_color, self.h_rect.outline_color)
+
+        return end
 
 
-        centerx = (self.h_rect.corner_1.x + self.h_rect.corner_2.x) / 2
-        centery = (self.h_rect.corner_1.y - self.h_rect.corner_2.y) / 2
-        intcenter = rg.Point(centerx, centery)
-        t = CapitalT(intcenter, self.h_rect.corner_2.x - self.h_rect.corner_1.x,
-                     self.v_rect.corner_2.y - self.v_rect.corner_1.y,
-                     self.v_rect.corner_2.x - self.v_rect.corner_1.x)
-        t.v_rect.fill_color = self.v_rect.fill_color
-        t.h_rect.fill_color = self.h_rect.fill_color
-        t.v_rect.outline_color = self.v_rect.outline_color
-        t.h_rect.outline_color = self.h_rect.outline_color
-        return t
+
 
 # -----------------------------------------------------------------------------
 # Calls  main  to start the ball rolling.
