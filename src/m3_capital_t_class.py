@@ -180,6 +180,8 @@ class CapitalT(object):
                      intersection_center.y - letter_thickness / 2),
             rg.Point(intersection_center.x + letter_thickness / 2,
                      intersection_center.y + height - letter_thickness / 2))
+        print(self.h_rect.corner_1, self.h_rect.corner_2)
+        print(self.v_rect.corner_1, self.v_rect.corner_2)
 
     def attach_to(self, window):
         """
@@ -282,14 +284,14 @@ class CapitalT(object):
         #        Note: the pdf shows the different locations that
         #        the T moves through, but there is only one T at any moment.
         # ---------------------------------------------------------------------
-        self.h_rect.corner_1.x = self.h_rect.corner_1 + dx
+        self.h_rect.corner_1.x = self.h_rect.corner_1.x + dx
         self.v_rect.corner_1.x = self.v_rect.corner_1.x + dx
-        self.h_rect.corner_1.y = self.h_rect.corner_1.y + dx
-        self.v_rect.corner_1.y = self.v_rect.corner_1.y + dx
+        self.h_rect.corner_1.y = self.h_rect.corner_1.y + dy
+        self.v_rect.corner_1.y = self.v_rect.corner_1.y + dy
         self.h_rect.corner_2.x = self.h_rect.corner_2.x + dx
         self.v_rect.corner_2.x = self.v_rect.corner_2.x + dx
-        self.h_rect.corner_2.y = self.h_rect.corner_2.y + dx
-        self.v_rect.corner_2.y = self.v_rect.corner_2.y + dx
+        self.h_rect.corner_2.y = self.h_rect.corner_2.y + dy
+        self.v_rect.corner_2.y = self.v_rect.corner_2.y + dy
 
     def clone(self):
         """
@@ -333,8 +335,6 @@ class CapitalT(object):
         end.set_colors(self.h_rect.fill_color, self.h_rect.outline_color)
 
         return end
-
-
 
 
 # -----------------------------------------------------------------------------
