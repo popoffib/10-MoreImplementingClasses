@@ -3,8 +3,8 @@ A   CapitalT   class and functions that use/test it.
 
 Authors: David Mutchler, Vibha Alangar, Matt Boutell, Dave Fisher,
          Mark Hays, Amanda Stouder, Aaron Wilkin, their colleagues,
-         and PUT_YOUR_NAME_HERE.
-"""  # TODO: 1. PUT YOUR NAME IN THE ABOVE LINE.
+         and Isabella Popoff.
+"""  # DONE: 1. PUT YOUR NAME IN THE ABOVE LINE.
 
 import rosegraphics as rg
 
@@ -162,7 +162,7 @@ class CapitalT(object):
           :type letter_thickness:    int
         """
         # ---------------------------------------------------------------------
-        # TODO: 3.
+        # DONE: 3.
         #   READ the above specification, including the Example.
         #   Implement this method, using the instance variables
         #      h_rect
@@ -170,6 +170,16 @@ class CapitalT(object):
         #   and *** NO OTHER INSTANCE VARIABLES. ***
         #   Note: Implement   attach_to   before testing this __init__ method.
         # ---------------------------------------------------------------------
+        self.h_rect = rg.Rectangle(
+            rg.Point(intersection_center.x - width / 2,
+                     intersection_center.y - letter_thickness / 2),
+            rg.Point(intersection_center.x + width / 2,
+                     intersection_center.y + letter_thickness / 2))
+        self.v_rect = rg.Rectangle(
+            rg.Point(intersection_center.x - letter_thickness / 2,
+                     intersection_center.y - letter_thickness / 2),
+            rg.Point(intersection_center.x + letter_thickness / 2,
+                     intersection_center.y + height - letter_thickness / 2))
 
     def attach_to(self, window):
         """
