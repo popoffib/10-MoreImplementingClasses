@@ -271,7 +271,7 @@ class CapitalT(object):
           :type dy: int
         """
         # ---------------------------------------------------------------------
-        # TODO: 6.
+        # DONE: 6.
         #   READ the above specification, including the Example.
         #   Implement this method, then TEST it by:
         #     a. Un-comment the call to its test function, in main.  Run.
@@ -282,6 +282,16 @@ class CapitalT(object):
         #        Note: the pdf shows the different locations that
         #        the T moves through, but there is only one T at any moment.
         # ---------------------------------------------------------------------
+        self.h_rect.corner_1.x = self.h_rect.corner_1 + dx
+        self.v_rect.corner_1.x = self.v_rect.corner_1.x + dx
+        self.h_rect.corner_1.y = self.h_rect.corner_1.y + dx
+        self.v_rect.corner_1.y = self.v_rect.corner_1.y + dx
+        self.h_rect.corner_2.x = self.h_rect.corner_2.x + dx
+        self.v_rect.corner_2.x = self.v_rect.corner_2.x + dx
+        self.h_rect.corner_2.y = self.h_rect.corner_2.y + dx
+        self.v_rect.corner_2.y = self.v_rect.corner_2.y + dx
+
+
 
     def clone(self):
         """
